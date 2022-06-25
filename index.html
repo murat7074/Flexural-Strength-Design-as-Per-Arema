@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexural Strengt Design as per Arema</title>
+    <meta name="keyword" content="Mühendislik hesaplama" />
+    <meta name="description" content="Mühendislik hesaplama" />
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div id="choose">
+      <h3 class="secim yazi">Please choose the application</h3>
+      <button class="secim secimbtns" id="secimbtn1">Flexural Strength</button>
+      <button class="secim secimbtns" id="secimbtn2">Shear Strength</button>
+    </div>
+   
+    <div id="page1">
+      <h3 class="text-center heading-medium" style="color: red">
+        Flexural Strength Design as Per Arema
+      </h3>
+
+      <section id="training">
+        <div class="items">
+          <table class="item" id="table1">
+            <tr class="baslik">
+              <th class="text-left">Description</th>
+              <th>Input</th>
+              <th>Unit</th>
+            </tr>
+
+            <tr id="input-container1">
+              <td>
+                <p class="text-left para1">Section width, <span> b</span> =</p>
+              </td>
+              <td>
+                <input class="input" id="input1" type="number" />
+              </td>
+              <td>mm</td>
+            </tr>
+
+            <tr id="input-container2">
+              <td>
+                <p class="text-left para1">Section height, <span>h</span> =</p>
+              </td>
+              <td >
+                <input class="input" id="input2" type="number" />
+              </td>
+              <td >mm</td>
+            </tr>
+
+            <tr id="input-container3">
+              <td>
+                <p class="text-left para1">
+                  Thickness of concrete clear cover, <span>c</span> =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input3" type="number" />
+              </td>
+              <td>mm</td>
+            </tr>
+
+            <tr id="input-container4">
+              <td>
+                <p class="text-left para1">
+                  Specified compressive strength of concrete, <span>fc</span> =
+                </p>
+              </td>
+              <td >
+                <input class="input" id="input4" type="number" />
+              </td>
+              <td>Mpa</td>
+            </tr>
+
+            <tr id="input-container5">
+              <td>
+                <p class="text-left para1">
+                  Specified minimum yield strength of reinforcing bars,
+                  <span>fy</span>
+                  =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input5" type="number" />
+              </td>
+              <td>Mpa</td>
+            </tr>
+
+            <tr id="input-container6">
+              <td >
+                <p class="text-left para1">
+                  Please specify the diameter of tension reinforcement,
+                  <span>D_tension</span> =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input6" type="number" />
+              </td>
+              <td>mm</td>
+            </tr>
+
+            <tr id="input-container7">
+              <td >
+                <p class="text-left para1">
+                  Please specify the number of tension reinforcement,
+                  <span>n_tension</span> =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input7" type="number" />
+              </td>
+              <td >-</td>
+            </tr>
+
+            <tr id="input-container8">
+              <td>
+                <p class="text-left para1">
+                  Please specify the diameter of shear reinforcement,
+                  <span>D_shear</span> =
+                </p>
+              </td>
+              <td >
+                <input class="input" id="input8" type="number" />
+              </td>
+              <td>mm</td>
+            </tr>
+
+            <tr id="input-container9">
+              <td>
+                <p class="text-left para1">
+                  Please specify the spacing of shear reinforcement per meter,
+                  <span>s_shear</span> =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input9" type="number" />
+              </td>
+              <td>mm</td>
+            </tr>
+
+            <tr id="input-container10">
+              <td >
+                <p class="text-left para1">
+                  Please specify the leg number of shear reinforcement ,
+                  <span>n_shear</span> =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input10" type="number" />
+              </td>
+              <td>-</td>
+            </tr>
+
+            <tr id="input-container11">
+              <td>
+                <p class="text-left para1">
+                  Please specify the factored moment, <span>Mu</span> =
+                </p>
+              </td>
+              <td>
+                <input class="input" id="input11" type="number" />
+              </td>
+              <td>kN-m</td>
+            </tr>
+          </table>
+
+          <table class="item" id="table2">
+            <tr class="baslik">
+              <th class="text-left">Equation</th>
+              <th class="text-center">Result</th>
+              <th>Unit</th>
+            </tr>
+
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span> As</span> = n_tension * π * D_tension² / 4
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc1"></div>
+              </td>
+              <td >mm²</td>
+            </tr>
+
+            <tr>
+              <td>
+                <p class="text-left para1">
+                  <span>Av</span> = n_shear * (1000 / s_shear) * π * D_shear² /
+                  4
+                </p>
+              </td>
+              <td>
+                <div class="sonuc" id="sonuc2"></div>
+              </td>
+              <td >mm²</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span>d</span> = h - (c + D_tension / 2 + D_shear)
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc3"></div>
+              </td>
+              <td>mm</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span>a</span> = (As * fy) / (0.85 * fc * b)
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc4"></div>
+              </td>
+              <td >mm</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1"><span>fr</span> = 0.62 * fc⌃0.5</p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc5"></div>
+              </td>
+              <td >Mpa</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span>Mn </span> = As * fy * (d - a / 2)
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc6"></div>
+              </td>
+              <td >kN-m</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span>Mr</span> = Phi_flexure * Mn
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc7"></div>
+              </td>
+              <td >kN-m</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1"><span>rho</span> = As / (b * d)</p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc8"></div>
+              </td>
+              <td >-</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span>rho_b</span> * 0.75 = 0.85 * Beta_1 * fc * 600 / (fy *
+                  (600 + fy))
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc9"></div>
+              </td>
+              <td >-</td>
+            </tr>
+            <tr>
+              <td >
+                <p class="text-left para1">
+                  <span>Mcr</span> = fr * b * h² / 6
+                </p>
+              </td>
+              <td >
+                <div class="sonuc" id="sonuc10"></div>
+              </td>
+              <td >kN-m</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="butonlar">
+        <button type="button" id="calculate" class="btn btn-success">
+          Calculate
+        </button>
+        <button type="button" id="inputclear" class="btn btn-danger">
+          Input Clear
+        </button>
+      </section>
+
+      <section id="training2">
+        <table id="table3">
+          <tr class="baslik">
+            <th>Condition</th>
+            <th>Result</th>
+          </tr>
+
+          <tr>
+            <td>
+              <p class="text-left para1 kosul">0.75 * rho_b < rho</p>
+            </td>
+            <td>
+              <div class="cevap" id="cevap1"></div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p class="text-left para1 kosul">Mu > Mr</p>
+            </td>
+            <td>
+              <div class="cevap" id="cevap2"></div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p class="text-left para1 kosul">Mr > min(1.33Mu, 1.20Mcr)</p>
+            </td>
+            <td>
+              <div class="cevap" id="cevap3"></div>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </div>
+
+
+    
+    <div id="page2">
+
+       
+
+        <h3 class="text-center heading-medium" style="color: blue;">Shear Strength as Per Arema</h3>
+
+        <section id="trainingtwo" >
+
+
+            <div class="itemstwo">
+
+
+                <table class="itemtwo" id="table4">
+                    <tr class="baslik">
+                        <th class="text-left">Description</th>
+                        <th>Input</th>
+                        <th>Unit</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Section width, <span class="spantwo"> b</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo1" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Section height, <span class="spantwo"> h</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo2" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Thickness of concrete clear cover, <span class="spantwo"> c</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo3" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Total opening width in section, <span class="spantwo"> opening_width</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo4" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Specified compressive strength of concrete, <span class="spantwo"> fc</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo5" type="number">
+                        </td>
+                        <td>Mpa</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Specified minimum yield strength of reinforcing bars,  <span class="spantwo"> fy</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo6" type="number">
+                        </td>
+                        <td>Mpa</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the diameter of tension reinforcement, <span class="spantwo"> D_tension</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo7" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the number of tension reinforcement, <span class="spantwo"> n_tension</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo8" type="number">
+                        </td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the diameter of shear reinforcement, <span class="spantwo"> D_shear</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo9" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the spacing of shear reinforcement, <span class="spantwo"> s_shear</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo10" type="number">
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the leg number of shear reinforcement ,  <span class="spantwo"> n_shear</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo11" type="number">
+                        </td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the factored moment, <span class="spantwo"> Mu</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo12" type="number">
+                        </td>
+                        <td>kN-m</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1">Please specify the factored shear force,  <span class="spantwo"> Vu</span> =</p>
+                        </td>
+                        <td>
+                            <input class="inputtwo" id="inputtwo13" type="number">
+                        </td>
+                        <td>kN-m</td>
+                    </tr>
+
+                </table>
+
+
+                <table class="itemtwo" id="table5">
+                    <tr class="baslik">
+                        <th class="text-left">Equation</th>
+                        <th class="text-center">Result</th>
+                        <th>Unit</th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> As</span> =  n_tension * π * D_tension² / 4
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo1"></div>
+                        </td>
+                        <td>mm²</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> Av</span> = n_shear * π * D_shear² / 4 
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo2"></div>
+                        </td>
+                        <td>mm²</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> a</span>  = (As * fy) / (0.85 * fc * b)  
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo3"></div>
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> d</span>  = h - (c + D_tension / 2 + D_shear) 
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo4"></div>
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> dv</span>  = h - (c + D_shear / 2 + a/2)  
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo5"></div>
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> bw</span> = b - opening_width   
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo6"></div>
+                        </td>
+                        <td>mm</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> calc_1</span> = Vu * dv / Mu 
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo7"></div>
+                        </td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo">vu </span>= Vu / (Phi_shear * bw * dv)
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo8"></div>
+                        </td>
+                        <td>Mpa</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> rho_w</span>  = As / (bw * d)
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo9"></div>
+                        </td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> vc</span>  = 0.16 * fc˄0.5 + 17 * rho_w * Vu * dv / Mu
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo10"></div>
+                        </td>
+                        <td>Mpa</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> vc_max</span>  = 0.29 * fc˄0.5
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo11"></div>
+                        </td>
+                        <td>Mpa</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> Av_req</span>  = max(0,(vu-vc) * bw * s_shear / fy)
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo12"></div>
+                        </td>
+                        <td>mm²</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> s_shearmax</span> = if (dv / 2 < 600, dv / 2 ,600) 
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo13"></div>
+                        </td>
+                        <td>mm²</td>
+                    </tr>
+                   
+                    <tr>
+                        <td>
+                            <p class="text-left para1"> <span class="spantwo"> Av_min</span>  = 0.42 * bw * s_shearmax / fy
+                            </p>
+                        </td>
+                        <td >
+                            <div class="sonuctwo" id="sonuctwo15"></div>
+                        </td>
+                        <td>mm²</td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+
+        </section>
+
+        <section class="butonlartwo">
+
+            <button type="button" id="calculatetwo" class="btn2 btn-success">Calculate </button>
+            <button type="button" id="inputcleartwo" class="btn2 btn-danger">Input Clear</button>
+
+        </section>
+
+
+        <section id="trainingtwo2" class="bg-light-blue trainingtwo2section2 ">
+
+
+
+            <table id="table6">
+                <tr class="baslik">
+                    <th>Condition</th>
+                    <th>Result</th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="text-left para1 kosultwo ">  vc < vc_max   </p>
+                    </td>
+                    <td>
+                        <div class="cevaptwo" id="cevaptwo1"></div>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <p class="text-left para1 kosultwo">  vu < vc   </p>
+                    </td>
+                    <td>
+                        <div class="cevaptwo" id="cevaptwo2"></div>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <p class="text-left para1 kosultwo"> vu / vc < 2 / 3 * fc˄0.5  
+                           
+                        </p>
+                    </td>
+                    <td>
+                        <div class="cevaptwo" id="cevaptwo3"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-left para1 kosultwo">  s_shear < s_shearmax 
+                            
+                        </p>
+                    </td>
+                    <td>
+                        <div class="cevaptwo" id="cevaptwo4"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-left para1 kosultwo">  Av_req < Av  
+                            
+                        </p>
+                    </td>
+                    <td>
+                        <div class="cevaptwo" id="cevaptwo5"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-left para1 kosultwo">  Av_min < Av  
+                           
+                        </p>
+                    </td>
+                    <td>
+                        <div class="cevaptwo" id="cevaptwo6"></div>
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+        </section>
+
+    </div>
+
+    <script src="flexural.js"></script>
+    <script src="shear.js"></script>
+  </body>
+</html>

@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,500&family=Roboto:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+   margin: 0;
+}
+
+#page1 {
+  background-color: #fff;
+}
+
+@media (max-width: 680px) {
+  #page1 {
+    flex-direction: column;
+  }
+}
+
+span {
+  color: orange;
+}
+
+.sonuc {
+  border: 1px solid black;
+  width: 175px;
+  height: 22px;
+  background: white;
+  color: black;
+}
+
+.input {
+  text-align: center;
+}
+
+.cevap {
+  border: 1px solid black;
+  width: 175px;
+  height: 22px;
+  background: white;
+  color: black;
+}
+
+#calculate {
+  margin-right: 2rem;
+}
+
+#inputclear {
+  margin-left: 2rem;
+}
+
+#training {
+  background: linear-gradient(90deg, #062e51, #7158e2);
+  color: white;
+  padding: 1rem;
+}
+
+#training2 {
+  background: linear-gradient(90deg, rgb(122, 203, 230), rgb(170, 215, 232));
+}
+
+#table3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+#training .items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 940px) {
+  #training .items {
+    flex-direction: column;
+  }
+}
+
+#training .items .item {
+  width: 49%;
+  text-align: center;
+  padding: 1rem;
+}
+
+#calculate:hover {
+  background: green;
+  color: white;
+  opacity: 0.7;
+}
+
+#inputclear:hover {
+  background: red;
+  color: white;
+  opacity: 0.7;
+}
+
+.baslik {
+  border: 1px solid black;
+  color: rgb(255, 85, 0);
+  letter-spacing: 0.2rem;
+  font-size: bold;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: khaki;
+}
+
+.para1 {
+  font-size: 0.85rem;
+}
+
+.kosul {
+  width: 350px;
+  height: 30px;
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.heading-small {
+  font-size: 1.25rem;
+}
+
+.heading-medium {
+  font-size: 1.5rem;
+}
+
+.heading-big {
+  font-size: 1.75rem;
+}
+
+.bg-dark-blue {
+  background: #062e51;
+}
+
+.bg-light-blue {
+  background: #336ea2;
+}
+
+.alertdiv {
+  background: red;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  font-size: 25px;
+  padding-top: 5px;
+}
+
+/*Button*/
+
+.butonlar {
+  height: 75px;
+  background: linear-gradient(90deg, #a9a9a9, #dcd8d8);
+
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: auto;
+  height: 35px;
+  margin-top: 1.25rem;
+  padding: 0.5rem 3rem;
+  border-radius: 7px;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: #336ea2;
+}
+
+.btn-danger {
+  background: red;
+}
+
+.btn-success {
+  background: green;
+}
+
+/* Sayfa seçimi Css */
+
+#choose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 680px) {
+  #choose {
+    flex-direction: column;
+  }
+}
+
+.secim {
+  text-align: center;
+  padding: 8px;
+  margin: 8px;
+}
+
+#choose .yazi {
+  color: violet;
+  background: white;
+  font-size: 1.5rem;
+}
+
+#secimbtn1 {
+  border: 1px solid black;
+  border-radius: 5px;
+  background: darksalmon;
+  color: black;
+  width: 220px;
+  height: 35px;
+  font-size: 1rem;
+}
+
+#secimbtn2 {
+  border: 1px solid black;
+  border-radius: 5px;
+  background: orchid;
+  color: black;
+  width: 220px;
+  height: 35px;
+  font-size: 1rem;
+}
+
+#secimbtn1:hover {
+  border: 1px solid black;
+  background: red;
+  color: white;
+  opacity: 0.7;
+}
+#secimbtn2:hover {
+  border: 1px solid black;
+  background: red;
+  color: white;
+  opacity: 0.9;
+}
+
+/* İkinci sayfa CSS */
+
+#page2 {
+  display: none;
+  background-color: #fff;
+}
+
+#trainingtwo .itemstwo {
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#trainingtwo .itemstwo .itemtwo {
+  width: 49%;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 680px) {
+  #page2 {
+    flex-direction: column;
+  }
+  .itemtwo {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1200px) {
+  #trainingtwo .itemstwo {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+  }
+}
+
+#trainingtwo {
+    background: linear-gradient(90deg, rgb(137, 208, 231), rgb(184, 218, 230));
+  color: black;
+  padding: 0;
+  height: 45%;
+}
+
+#trainingtwo2 {
+  height: 170px;
+}
+
+#table6 {
+    background: linear-gradient(90deg, mediumblue, rgb(68, 68, 205));
+  background: mediumblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+}
+
+.kosultwo {
+  color: white;
+  padding-right: 30px;
+}
+
+.cevaptwo {
+  border: 1px solid black;
+  width: 350px;
+  height: 22px;
+  background: white;
+  color: black;
+}
+
+.sonuctwo {
+  border: 1px solid black;
+  width: 175px;
+  height: 22px;
+  background: white;
+  color: black;
+}
+
+.butonlartwo {
+  height: 65px;
+  background: linear-gradient(90deg, #a9a9a9, #dcd8d8);
+  padding-bottom: 1.2rem;
+  padding-right: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculatetwo {
+  margin-right: 2rem;
+}
+
+#inputcleartwo {
+  margin-left: 2rem;
+}
+
+.btn2 {
+  width: auto;
+  height: 35px;
+  margin-top: 1.25rem;
+  padding: 0.5rem 3rem;
+  border-radius: 7px;
+  letter-spacing: 0.5px;
+}
+
+#calculatetwo:hover {
+  background: green;
+  color: white;
+  opacity: 0.7;
+}
+
+#inputcleartwo:hover {
+  background: red;
+  color: white;
+  opacity: 0.7;
+}
+
+.inputtwo {
+  text-align: center;
+}
+.spantwo {
+  color: darkred;
+  font-weight: bold;
+}
